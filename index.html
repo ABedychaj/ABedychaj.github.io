@@ -18,6 +18,7 @@ a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
 h1{font-size:2.2rem;margin:0}
 .role{color:var(--mut);font-size:1.1rem;margin:4px 0 16px}
 .links{display:flex;flex-wrap:wrap;gap:8px 20px;margin:16px 0 32px}
+.em small{display:block;color:var(--mut);font-size:.85rem;line-height:1.2}
 h2{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:40px 0 12px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
 .card h3{margin:0;font-size:1rem}
@@ -36,7 +37,7 @@ ul{padding-left:20px;margin:0}
 <p>I build and ship multimodal retrieval and computer vision systems, and take ML from research to production in the cloud. MSc in Applied Mathematics, with research papers at NeurIPS, ECML PKDD and PAKDD.</p>
 
 <div class="links">
-  <a data-u="bWFpbHRvOmFuZHJ6ZWouYmVkeWNoYWpAZ21haWwuY29t">email</a>
+  <span class="em"><a data-u="bWFpbHRvOmFuZHJ6ZWouYmVkeWNoYWpAZ21haWwuY29t">Email</a><small></small></span>
   <a data-u="aHR0cHM6Ly9naXRodWIuY29tL0FCZWR5Y2hhag==">GitHub</a>
   <a data-u="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2FuZHJ6ZWotYmVkeWNoYWotYTI0ODQ4M2Iv">LinkedIn</a>
 </div>
@@ -80,7 +81,7 @@ ul{padding-left:20px;margin:0}
 </main>
 <script>
 // hrefs are base64 in the markup, decoded on load (keeps naive scrapers out)
-document.querySelectorAll("a[data-u]").forEach(a=>{a.href=atob(a.dataset.u);if(a.href.startsWith("mailto:"))a.textContent=a.href.slice(7)});
+document.querySelectorAll("a[data-u]").forEach(a=>{a.href=atob(a.dataset.u);if(a.href.startsWith("mailto:"))a.nextSibling.textContent=a.href.slice(7)});
 </script>
 </body>
 </html>
